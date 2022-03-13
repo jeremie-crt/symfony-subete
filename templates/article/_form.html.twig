@@ -1,0 +1,23 @@
+{{ form_start(form) }}
+
+    {{ form_row(form.title) }}
+    {{ form_row(form.intro) }}
+
+    {{ form_row(form.image) }}
+
+    {{ form_row(form.content) }}
+
+    {{ form_row(form.category) }}
+
+    {% include('_partials/form/_collections.html.twig') with {formProp: form.extra_categories, label: 'Add a category', className: 'extra_cats'} %}
+
+    {{ form_row(form.tags) }}
+
+    {% include('_partials/form/_collections.html.twig') with {formProp: form.extra_tags, label: 'Add a tag', className: 'extra_tags'} %}
+
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+{% block body_scripts %}
+    <script src="{{ asset('assets/js/utils/form_collection.js') }}"></script>
+{% endblock %}

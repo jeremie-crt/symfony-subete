@@ -1,0 +1,12 @@
+{% extends 'emails/base_email.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Welcome On Subete {{ username }}</h1>
+        <img src="{{ asset('assets/images/img/pikatracer.jpg') }}" alt="bg" class="text-center">
+        <p>Quickly facilitate flexible mindshare whereas leveraged supply chains. Dynamically generate scalable niche markets after exceptional solutions. Dynamically fabricate tactical communities with quality benefits. Globally communicate optimal strategic theme areas and pandemic customer service. Progressively reintermediate professional information for professional quality vectors.
+            Conveniently synthesize standardized portals before cooperative expertise. Conveniently deliver multimedia based results whereas plug-and-play deliverables. Competently evolve multimedia based applications with best-of-breed technologies. Energistically parallel task prospective.</p>
+
+        <p class="text-center">{{ "now" | date("d/m/Y") }}</p>
+    </div>
+{% endblock %}

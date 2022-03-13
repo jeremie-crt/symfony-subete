@@ -1,0 +1,18 @@
+{% block body_javascripts %}
+    {# {{ encore_entry_script_tags('app') }} #}
+    <script src="{{ asset('assets/js/library/jquery-331-slim.js') }}"></script>
+    <script src="{{ asset('assets/js/library/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/library/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/library/select2.min.js') }}"></script>
+
+    <script>
+        $('select').select2({
+
+        })
+    </script>
+{% endblock %}
+
+{% block body_scripts %}
+{% endblock %}
+</body>
+</html>

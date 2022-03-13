@@ -1,0 +1,21 @@
+{% trans_default_domain 'app' %}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}HomeController || {{ parent() }}{% endblock %}
+
+{% block body %}
+    {% dump(app.flashes) %}
+    {# display any flash message #}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+<h1>{{ title }}</h1>
+<p>hello from the homepage</p>
+
+{% endblock %}

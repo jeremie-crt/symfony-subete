@@ -1,0 +1,34 @@
+Symfony tp:
+
+Easyadmin
+vich + liip
+-----mailer
+----select
+----multiple collection
+-----automatic slug 
+
+----login logout
+
+login oauth 2
+github facebook
+twitter ?
+
+----register 
++ new pwd
+------------
+
+----paginator
+translation
+
+-----edit roles on user create
+-----pwd hash
+
+
+voters
+---apiPlatform
+---messenger
+---pdf
+
+workflow
+test panther
+

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }} | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="mt-5 container">
+        <h3>Form to add a new tweet message to the queue async system</h3>
+        <div class="mt-4 col-sm-8">
+            {{ form_start(form) }}
+            <div class="">
+                {{ form_row(form.title) }}
+            </div>
+            <div class="">
+                {{ form_row(form.content) }}
+            </div>
+            <button class="btn btn-primary" type="submit">SAVE TWEET</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+user {
+    username
+    email
+    pwd
+    createdat
+}
+
+articles {
+    title
+    intro
+    desc
+    image
+    createdat
+    updatedat
+    author
+    comments
+    categories
+    slug
+    tags
+}
+
+comments {
+    username
+    content
+    updatedat
+    articles
+}
+
+category {
+    title
+}
+
+tags {
+    title
+    articles
+}
+
+home
+
+médiatheque
+images
+video

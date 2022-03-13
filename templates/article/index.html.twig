@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <h1>Article index</h1>
+
+    <div class="count">
+        {{ articles.getTotalItemCount }}
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(articles, 'ID', 'a.id') }}</th>
+                <th{% if articles.isSorted('a.Title') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(articles, 'TITLE', 'a.title') }}
+                </th>
+                <th{% if articles.isSorted(['a.date', 'a.time']) %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(articles, 'INTRO', ['a.date', 'a.time']) }}
+                </th>
+                <th>Content</th>
+                <th>Image</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>Slug</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.intro }}</td>
+                <td>{{ article.content }}</td>
+                <td>{{ article.image }}</td>
+                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.slug }}</td>
+                <td>
+                    <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
+                    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(articles) }}
+    </div>
+
+    <a href="{{ path('article_new') }}">Create new</a>
+{% endblock %}

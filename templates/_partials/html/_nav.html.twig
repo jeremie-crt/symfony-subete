@@ -1,0 +1,25 @@
+<header>
+    <div class="row justify-content-between">
+        <div class="nav-mb-4">
+            <ul class="list-group list-group-horizontal-md">
+                <li class="list-group-item"><a href="{{ path('home') }}">HOME</a></li>
+                <li class="list-group-item"><a href="{{ path('category_index') }}">category</a></li>
+                <li class="list-group-item"><a href="{{ path('tags_index') }}">tags</a></li>
+                <li class="list-group-item"><a href="{{ path('article_index') }}">article</a></li>
+                <li class="list-group-item"><a href="{{ path('home') }}API">API</a></li>
+                <li class="list-group-item"><a href="{{ path('tweet_index') }}">Tweet</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-mb-4">
+            <ul class="list-group list-group-horizontal-md">
+                {% if app.user %}
+                    <li class="list-group-item"><a href="{{ path('app_logout') }}">LOGOUT</a></li>
+                {% else %}
+                    <li class="list-group-item"><a href="{{ path('app_login') }}">LOGIN</a></li>
+                    <li class="list-group-item"><a href="{{ path('app_register') }}">REGISTER</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</header>
